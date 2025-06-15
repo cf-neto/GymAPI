@@ -50,6 +50,7 @@ GymAPI/
 | GET | `/members/{id}` | Obtém um membro específico |
 | POST | `/members` | Cria um novo membro |
 | DELETE | `/members/{id}` | Remove um membro |
+| PUT | `/members/{id}` | Atualiza um membro |
 
 ### Planos (`/plans`)
 | Método | Rota | Descrição |
