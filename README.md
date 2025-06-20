@@ -72,6 +72,13 @@ GymApp/
 | GET | `/members/{memberId}/checkins` | Histórico de check-ins |
 | POST | `/members/{memberId}/checkins` | Registra novo check-in |
 
+## 👀 Visualização
+
+![Captura de tela 2025-06-20 204513](https://github.com/user-attachments/assets/9fa88035-5aeb-4a35-8f4c-cd4ea702e32e)
+
+
+
+
 ## 📝 Modelos de Dados
 
 ### Member
