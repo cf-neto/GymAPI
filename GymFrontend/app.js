@@ -19,7 +19,7 @@ function trocarSection() {
     if (sectionMembers.classList.contains('active')) {
         sectionMembers.style.display = "flex";
     } 
-    
+
     else if (sectionPlans.classList.contains('active')) {
         sectionPlans.style.display = "flex";
     } 
@@ -66,6 +66,7 @@ function getAPI()
         return response.json()
     })
     .then(members => {
+        tbody.innerHTML = '';
         members.forEach(member => {
             const tr = document.createElement('tr');
             tr.innerHTML = `
@@ -89,3 +90,18 @@ document.addEventListener('DOMContentLoaded', () => {
     sectionHome.classList.add('active');
     trocarSection();
 })
+
+// HREF para ir par ao lugar certo
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      const headerHeight = document.querySelector('header').offsetHeight;
+      window.scrollTo({
+        top: target.offsetTop - headerHeight,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
