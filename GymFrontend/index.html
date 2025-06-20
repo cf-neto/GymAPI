@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GymApp - Lista de Membros</title>
     <link href="./style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   </head>
   
 <body class="bg-[#F6F7EB]">
-  <header class="w-full h-[10dvh] flex justify-around items-center bg-[#393E41] text-[#F6F7EB]">
+  <header class="fixed top-0 left-0 z-50 w-full h-[10dvh] flex justify-around items-center text-[#F6F7EB]">
     <a class="text-2xl">GymApp</a>
     <nav>
       <ul class="flex gap-8">
@@ -19,12 +24,203 @@
     </nav>
   </header>
   <main class="flex flex-col items-center justify-center">
-    <section id="inicio">
+    
+      <section class="flex flex-col block w-[85%] space-y-5" id="inicio">
+        <div class="flex flex-row justify-between">
 
-    </section>
+          <div class="min-h-screen flex flex-col justify-center px-10">
+            <h2 class="text-5xl">Bem-vindo ao <strong>GymApp</strong></h2><br>
+            <h2 class="text-4xl font-bold mt-8 mb-8  ">Sobre</h2>
+            <div class="ml-4 w-[85%]">
+              <p class="mb-4">
+                O <strong>GymApp</strong> é uma aplicação web completa para gestão de academias, desenvolvida com foco em simplicidade, eficiência e escalabilidade. Ele oferece uma API RESTful para gerenciar membros, planos e check-ins, facilitando a integração com diversos frontends e sistemas.
+              </p>
+              <p class="mb-4">
+                O projeto foi construído utilizando tecnologias modernas, como ASP.NET Core com .NET para o backend, e Javavascript, CSS e TailwindCSS para o frontend. A ideia é oferecer uma solução robusta para academias de todos os portes.
+              </p>
+              <p>
+                Este projeto foi criado como parte de estudo sobre ASP.NET por Carlos Fernando, um desenvolvedor apaixonado por tecnologia e soluções 
+                Está aberto a contribuições e melhorias para expandir suas funcionalidades.
+              </p>
+              <hr class="mt-4">
+            </div>
+          </div>
+          <div class="flex justify-center items-center w-[50%]">
+            <div class="p-5 border-2 border-solid w-full rounded-md h-[40%]">
+              <h1 class="text-4xl text-center">Índice</h1>
+              <div class="w-full flex justify-center items-center mb-6">
+                <hr class="w-[50%]">
+              </div>
+              <div class="gap-1 mt-4 grid grid-cols-2 gap-x-8 gap-y-2 text-center text-lg">
+                <a href="#endpoints" class="hover:underline cursor-pointer">Endpoints</a>
+                <a href="#tecnologias-utilizadas" class="hover:underline cursor-pointer">Tecnologias</a>
+                <a href="#estrutura" class="hover:underline cursor-pointer">Estrutura</a>
+                <a href="#footer" class="hover:underline cursor-pointer">Rodapé</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
 
+        <div class="min-h-screen flex flex-col justify-center px-10" id="endpoints">
 
-    <section id="lista-membros" class="w-full flex items-center flex-col gap-5">
+          <h2 class="text-4xl font-bold">Endpoints</h2>
+  
+          <div class="grid grid-cols-2 gap-6 ml-2">
+            <!-- MEMBROS -->
+            <div data-aos="fade-up" data-aos-duration="800"  class="p-2">
+              <h3 class="text-2xl mt-4 mb-5">Membros (<strong>/members</strong>)</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Método</th>
+                    <th>Rota</th>
+                    <th>Descrição</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>GET</td>
+                    <td>/members</td>
+                    <td>Lista todos os membros</td>
+                  </tr>
+                  <tr>
+                    <td>GET</td>
+                    <td>/members/{id}</td>
+                    <td>Obtém um membro específico</td>
+                  </tr>
+                  <tr>
+                    <td>POST</td>
+                    <td>/members/{id}</td>
+                    <td>Cria um novo membro</td>
+                  </tr>
+                  <tr>
+                    <td>DELETE</td>
+                    <td>/members/{id}</td>
+                    <td>Remove um membro</td>
+                  </tr>
+                  <tr>
+                    <td>PUT</td>
+                    <td>/members/{id}</td>
+                    <td>Atualiza um membro</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+  
+            <!-- PLANOS -->
+            <div data-aos="fade-up" data-aos-duration="800" class="p2">
+              <h3 class="text-2xl mt-4 mb-5">Planos (<strong>/plans</strong>)</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Método</th>
+                    <th>Rota</th>
+                    <th>Descrição</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>GET</td>
+                    <td>/plans</td>
+                    <td>Lista todos os planos</td>
+                  </tr>
+                  <tr>
+                    <td>GET</td>
+                    <td>/plans/{id}</td>
+                    <td>Obtém um plano específico</td>
+                  </tr>
+                  <tr>
+                    <td>POST</td>
+                    <td>/plans/{id}</td>
+                    <td>Cria um novo plano</td>
+                  </tr>
+                  <tr>
+                    <td>DELETE</td>
+                    <td>/plans/{id}</td>
+                    <td>Remove um plano</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+  
+            <!-- CheckIns -->
+            <div data-aos="fade-up" data-aos-duration="800"  class="p-2">
+              <h3 class="text-2xl mt-4 mb-5">Check-ins (<strong>/members/{memberId}/checkins</strong>)</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Método</th>
+                    <th>Rota</th>
+                    <th>Descrição</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>GET</td>
+                    <td>/members/{memberId}/checkins</td>
+                    <td>Histórico de check-ins</td>
+                  </tr>
+                  <tr>
+                    <td>POST</td>
+                    <td>/members/{memberId}/checkins</td>
+                    <td>Registra novo check-in</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <br><hr><br>
+        <div id="tecnologias-utilizadas" data-aos="fade-up" data-aos-duration="900" >
+          <h2  class="text-4xl font-bold mb-10 mt-8">Tecnologias utilizadas</h2>
+          <div class="flex gap-8 ml-4 items-center text-[#393E41] text-[80px]">
+            <i class="devicon-csharp-plain"></i>
+            <i class="devicon-dot-net-plain"></i>
+            <i class="devicon-javascript-plain"></i>
+            <i class="devicon-html5-plain"></i>
+            <i class="devicon-css3-plain"></i>
+            <i class="devicon-tailwindcss-plain"></i>
+          </div>
+        </div>
+        <br><hr><br>
+
+        <div class="min-h-screen" data-aos="fade-up" data-aos-duration="900" id="estrutura">
+          <h2 class="text-4xl font-bold mb-5 mt-8">Estrutura de pastas</h2>
+          <pre class="bg-[#F6F7EB] p-4 rounded-md border border-gray-300 overflow-x-auto text-[#393E41] font-mono" >
+            GymApp/
+            ├── GymAPI/
+            │   ├── Controllers/
+            │   │   ├── CheckInController.cs
+            │   │   ├── MembersController.cs
+            │   │   └── PlansController.cs
+            │   ├── Data/
+            │   │   ├── CheckInRepository.cs
+            │   │   ├── MemberRepository.cs
+            │   │   └── PlanRepository.cs
+            │   ├── Models/
+            │   │   ├── CheckIn.cs
+            │   │   ├── Member.cs
+            │   │   └── Plan.cs
+            │   ├── Properties/
+            │   ├── .gitignore
+            │   ├── appsettings.Development.json
+            │   ├── appsettings.json
+            │   ├── GymAPI.csproj
+            │   └── Program.cs
+            │
+            ├── GymFrontend/
+            │   ├── index.html
+            │   ├── style.css
+            │   ├── instrucoes.md
+            │   └── app.js
+            └── README.md
+          </pre>
+        </div>
+      </section>
+
+    <section id="lista-membros" class="w-full flex items-center flex-col gap-5 min-h-screen">
       <h1 class="text-4xl">Lista de Membros</h1>
       <table id="membersTable">
         <thead>
@@ -44,8 +240,57 @@
     <section id="lista-planos">
       botao
     </section>
+
+    <footer id="footer" class="bg-[#393E41] text-[#F6F7EB] mt-20 w-full">
+  <div class="w-full mx-auto px-6 py-10 flex justify-around gap-8 text-center md:text-left">
+    
+    <!-- Sobre -->
+    <div>
+      <h4 class="text-xl font-semibold mb-4">GymApp</h4>
+      <p class="text-sm">
+        Solução completa para gestão de academias, desenvolvida com ASP.NET Core e TailwindCSS.
+      </p>
+    </div>
+
+    <!-- Links úteis -->
+    <div>
+      <h4 class="text-xl font-semibold mb-4">Links úteis</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#endpoints" class="hover:underline">Endpoints da API</a></li>
+        <li><a href="#tecnologias-utilizadas" class="hover:underline">Tecnologias</a></li>
+        <li><a href="#estrutura" class="hover:underline">estrutura</a></li>
+      </ul>
+    </div>
+
+    <!-- Desenvolvedor -->
+    <div>
+      <h4 class="text-xl font-semibold mb-4">Desenvolvedor</h4>
+      <p class="text-sm">Carlos Fernando</p>
+      <p class="text-sm">Desenvolvedor Fullstack</p>
+      <div class="flex justify-center md:justify-start gap-4 mt-2">
+
+        <a href="https://github.com/cf-neto" target="_blank">
+          <i class="devicon-github-original text-2xl"></i>
+        </a>
+
+        <a href="https://linkedin.com/in/seu-linkedin" target="_blank">
+          <i class="text-2xl devicon-linkedin-plain"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center py-4 border-t border-gray-700 text-sm">
+    © 2025 GymApp. Todos os direitos reservados.
+  </div>
+</footer>
+
   </main>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 <script src="./app.js"></script>
 </html>
