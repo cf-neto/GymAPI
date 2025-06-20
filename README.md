@@ -19,25 +19,31 @@ GymAPI permite que você:
 ## 📁 Estrutura de Pastas e Arquivos
 
 ```plaintext
-GymAPI/
-├── Controllers/
-│   ├── CheckInController.cs
-│   ├── MembersController.cs
-│   └── PlansController.cs
-├── Data/
-│   ├── CheckInRepository.cs
-│   ├── MemberRepository.cs
-│   └── PlanRepository.cs
-├── Models/
-│   ├── CheckIn.cs
-│   ├── Member.cs
-│   └── Plan.cs
-├── Properties/
-├── .gitignore
-├── appsettings.Development.json
-├── appsettings.json
-├── GymAPI.csproj
-├── Program.cs
+GymApp/
+├── GymAPI/
+│   ├── Controllers/
+│   │   ├── CheckInController.cs
+│   │   ├── MembersController.cs
+│   │   └── PlansController.cs
+│   ├── Data/
+│   │   ├── CheckInRepository.cs
+│   │   ├── MemberRepository.cs
+│   │   └── PlanRepository.cs
+│   ├── Models/
+│   │   ├── CheckIn.cs
+│   │   ├── Member.cs
+│   │   └── Plan.cs
+│   ├── Properties/
+│   ├── .gitignore
+│   ├── appsettings.Development.json
+│   ├── appsettings.json
+│   ├── GymAPI.csproj
+│   └── Program.cs
+│
+├── GymFrontend/
+│   ├── index.html
+│   ├── style.css
+│   └── app.js
 └── README.md
 ```
 
