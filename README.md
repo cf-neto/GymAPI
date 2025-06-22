@@ -1,3 +1,5 @@
+# PROJETO EM DESENVOLVIMENTO ‼️
+
 # 🏋️ GymAPI - API de Gerenciamento de Academia
 
 **GymAPI** é uma API RESTful para gerenciar membros, planos, treinos e check-ins de uma academia.  
