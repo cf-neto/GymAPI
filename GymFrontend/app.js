@@ -1,4 +1,5 @@
 const tbody = document.querySelector('#membersTable tbody');
+const tbodyPlans = document.querySelector('#plansTable tbody');
 
 const btnMembers = document.getElementById('h-membros');
 const btnPlans = document.getElementById('h-planos');
@@ -7,6 +8,9 @@ const btnHome = document.getElementById('h-inicio');
 const sectionMembers = document.getElementById('lista-membros');
 const sectionPlans = document.getElementById('lista-planos');
 const sectionHome = document.getElementById('inicio');
+
+const reloadMemberBtn = document.getElementById('reload-members');
+const reloadPlansBtn = document.getElementById('reload-plans');
 
 
 function trocarSection() {
@@ -56,7 +60,9 @@ btnHome.addEventListener('click', () => {
 
 
 
-function getAPI()
+
+// CONSUMIR API
+function getMembers()
 {
     return fetch('http://localhost:5280/members')
     .then(response => {
@@ -85,13 +91,69 @@ function getAPI()
     });
 }
 
+function getPlans()
+{
+    return fetch('http://localhost:5280/plans')
+    .then(response => {
+        if (!response.ok){
+            throw new Error("Erro");
+        }
+        return response.json()
+    })
+    .then(plans => {
+        tbodyPlans.innerHTML = '';
+        plans.forEach(plan => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${plan.id}</td>
+                <td>${plan.name}</td>
+                <td>R$ ${plan.monthlyPrice.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</td>
+            `;
+            tbodyPlans.appendChild(tr);
+        });
+    })
+    .catch(err => {
+        console.error('Erro ao carregar membros:', err);
+        tbody.innerHTML = '<tr><td colspan="5">Erro ao carregar membros</td></tr>';
+    });
+}
+
+function animatedReload(btn){
+    btn.animate(
+        [
+            { transform: 'rotate(0deg)' },
+            { transform: 'rotate(360deg)' }
+        ],
+        {
+            duration: 200,
+            easing: 'ease-in',
+            iterations: 3
+        }
+    );
+}
+
+// Reload API Animation
+reloadMemberBtn.addEventListener('click', () => {
+    animatedReload(reloadMemberBtn);
+    getMembers();
+})
+
+reloadPlansBtn.addEventListener('click', () => {
+    animatedReload(reloadPlansBtn);
+    getPlans();
+})
+
+
 document.addEventListener('DOMContentLoaded', () => {
-    getAPI();
+    getMembers();
+    getPlans()
     sectionHome.classList.add('active');
     trocarSection();
 })
 
-// HREF para ir par ao lugar certo
+
+
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
