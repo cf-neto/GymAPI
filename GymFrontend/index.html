@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GymApp - Lista de Membros</title>
     <link href="./style.css" rel="stylesheet">
+
+    <!-- Devicons href -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- Font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
   </head>
   
 <body class="bg-[#F6F7EB]">
@@ -22,6 +26,12 @@
         <li id="h-planos"><a class="text-xl">Planos</a></li>
       </ul>
     </nav>
+
+    <div class="hamb">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
   </header>
   <main class="flex flex-col items-center justify-center">
     
@@ -221,7 +231,7 @@
       </section>
 
     <section id="lista-membros" class="w-full flex items-center flex-col gap-5 min-h-screen">
-      <h1 class="text-4xl">Lista de Membros</h1>
+      <h1 class="text-4xl mt-10">Lista de Membros <span><i id="reload-members" class="text-2xl cursor-pointer fa-solid fa-rotate-right"></i></span></h1>
       <table id="membersTable">
         <thead>
           <tr>
@@ -237,8 +247,18 @@
     </section>
 
     
-    <section id="lista-planos">
-      botao
+    <section id="lista-planos" class="w-full flex items-center flex-col gap-5 min-h-screen">
+      <h1 class="text-4xl mt-10">Lista de Planos <span><i id="reload-plans" class="text-2xl cursor-pointer fa-solid fa-rotate-right"></i></span></h1>
+      <table id="plansTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>MonthlyPrice</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </section>
 
     <footer id="footer" class="bg-[#393E41] text-[#F6F7EB] mt-20 w-full">
