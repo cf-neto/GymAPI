@@ -1,12 +1,22 @@
 [
   {
     "Id": 1,
-    "Name": "mensal",
+    "Name": "Mensal",
     "MonthlyPrice": 150
   },
   {
     "Id": 2,
-    "Name": "anual",
-    "MonthlyPrice": 520
+    "Name": "Trimestral",
+    "MonthlyPrice": 130
+  },
+  {
+    "Id": 3,
+    "Name": "Semestral",
+    "MonthlyPrice": 110
+  },
+  {
+    "Id": 4,
+    "Name": "Anual",
+    "MonthlyPrice": 90
   }
 ]
