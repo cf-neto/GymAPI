@@ -1,3 +1,6 @@
+// =============================================
+// CONSTANTES E SELEÇÃO DE ELEMENTOS
+// =============================================
 const tbody = document.querySelector('#membersTable tbody');
 const tbodyPlans = document.querySelector('#plansTable tbody');
 
@@ -13,6 +16,9 @@ const reloadMemberBtn = document.getElementById('reload-members');
 const reloadPlansBtn = document.getElementById('reload-plans');
 
 
+// =============================================
+// FUNÇÕES E EVENTOS PRINCIPAIS
+// =============================================
 function trocarSection() {
     // Oculta todas
     sectionMembers.style.display = "none";
@@ -32,7 +38,6 @@ function trocarSection() {
         sectionHome.style.display = "flex";
     }
 }
-
 
 // Evento para abrir seção de membros
 btnMembers.addEventListener('click', () => {
@@ -57,9 +62,6 @@ btnHome.addEventListener('click', () => {
     sectionHome.classList.add('active');
     trocarSection();
 })
-
-
-
 
 // CONSUMIR API
 function getMembers()
@@ -144,14 +146,16 @@ reloadPlansBtn.addEventListener('click', () => {
 })
 
 
+
+// =============================================
+// INICIALIZAÇÃO
+// =============================================
 document.addEventListener('DOMContentLoaded', () => {
     getMembers();
     getPlans()
     sectionHome.classList.add('active');
     trocarSection();
 })
-
-
 
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
